@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- App branding color for the app bar -->
+        <item name="colorPrimary">#8BC34A</item>
+        <!-- Darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">#689F38</item>
+        <!-- Theme UI controls like checkboxes and text fields -->
+        <item name="colorButtonNormal">#8BC34A</item>
+    </style>
+    
+    <style name="teamHeaderStyle">
+        <item name ="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#616161</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+<!--Style for header text for goal-->
+    <style name="goalTextHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+
+    <!-- Style for header buttons in the score keeper -->
+    <style name="buttonHeaderStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- Style for footer buttons in the score keeper -->
+    <style name="buttonFooterStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- Style for footer text in the score keeper-->
+    <style name="textFooterStyle">
+    <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+</resources>

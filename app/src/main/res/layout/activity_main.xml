@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/scoreboard_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/teamHeaderStyle"
+                android:text="@string/home_team" />
+
+            <TextView
+                android:id="@+id/team_home_goal"
+                style="@style/goalTextHeader"
+                android:text="@string/initial_goal_value_home_team"
+                android:textSize="106sp" />
+
+            <Button
+                style="@style/buttonHeaderStyle"
+                android:text="@string/goals_home_team"
+                android:onClick="addOneGoalForHomeTeam"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/team_home_chance"
+                style="@style/goalTextHeader"
+                android:text="@string/initial_chance_value_home_team"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/buttonHeaderStyle"
+                android:onClick="addOneChanceForHomeTeam"
+                android:text="@string/chances_home_team" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/teamHeaderStyle"
+                android:text="@string/away_team" />
+
+            <TextView
+                android:id="@+id/team_away_goal"
+                style="@style/goalTextHeader"
+                android:text="@string/initial_goal_value_away_team"
+                android:textSize="106sp" />
+
+            <Button
+                style="@style/buttonHeaderStyle"
+                android:onClick="addOneGoalForAwayTeam"
+                android:text="@string/goals_away_team" />
+
+            <TextView
+                android:id="@+id/team_away_chance"
+                style="@style/goalTextHeader"
+                android:text="@string/initial_chance_value_away_team"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/buttonHeaderStyle"
+                android:onClick="addOneChanceForAwayTeam"
+                android:text="@string/chances_away_team" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        style="@style/buttonFooterStyle"
+        android:layout_marginBottom="82dp"
+        android:onClick="resetStats"
+        android:text="@string/reset" />
+
+</RelativeLayout>

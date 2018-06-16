@@ -1,0 +1,39 @@
+<resources>
+    <!--Title for the application. [CHAR LIMIT=12]-->
+    <string name="app_name">Score Keeper App</string>
+
+<!--Text display in the header for home team. [CHAR LIMIT=20]-->
+    <string name="home_team">Home Team</string>
+
+    <!--Text display in the text field for the initial goal value for home team. CHAR LIMIT=1-->
+    <string name="initial_goal_value_home_team">0</string>
+
+    <!--Text display in the button for goal for home team. [CHAR LIMIT=1]-->
+    <string name="goals_home_team">Goals</string>
+
+    <!--Text display in the text field for the initial chance value for home team. CHAR LIMIT=1-->
+    <string name="initial_chance_value_home_team">0</string>
+
+    <!--Text dispaly in the button for chances for home team.[CHAR LIMIT=2]-->
+    <string name="chances_home_team">Chances</string>
+
+    <!--Text display in the header for away team. [CHAR LIMIT=20]-->
+    <string name="away_team">Away Team</string>
+
+    <!--Text display in the text field for the initial goal value for away team. CHAR LIMIT=1-->
+    <string name="initial_goal_value_away_team">0</string>
+
+    <!--Text display in the button for goal for away team. [CHAR LIMIT=1]-->
+    <string name="goals_away_team">Goals</string>
+
+
+    <!--Text display in the text field for the initial chance value for away team. CHAR LIMIT=1-->
+    <string name="initial_chance_value_away_team">0</string>
+    <!--Text dispaly in the button for chances for away team. [CHAR LIMIT=2]-->
+    <string name="chances_away_team">Chances</string>
+
+    <!--Text display in the reset button. [CHAR LIMIT=8}-->
+    <string name="reset">Reset</string>
+
+
+</resources>
