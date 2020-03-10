@@ -1,5 +1,6 @@
 package com.example.android.scorekeeperapp;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -11,45 +12,50 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int goalHomeTeam = 0 ;
-    int chanceHomeTeam = 0 ;
-    int goalAwayTeam = 0 ;
-    int chanceAwayTeam = 0 ;
+    private ScoreViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-    /**
-     *Increase the goal for Home Team by 1 goal.
-     */
-    public void addOneGoalForHomeTeam(View view){
-        goalHomeTeam = goalHomeTeam+ 1 ;
-        displayGoalForHomeTeam(goalHomeTeam);
-    }
-    /**
-     *Increase the chance for Home Team by 1 foul.
-     */
-    public void addOneChanceForHomeTeam(View view){
-        chanceHomeTeam= chanceHomeTeam + 1 ;
-        displayChanceForHomeTeam(chanceHomeTeam);
+
+        mViewModel = ViewModelProviders.of(this).get(ScoreViewModel.class);
+        displayGoalForHomeTeam(mViewModel.goalHomeTeam);
+        displayGoalForAwayTeam(mViewModel.goalAwayTeam);
+        displayChanceForHomeTeam(mViewModel.chanceHomeTeam);
+        displayChanceForAwayTeam(mViewModel.chanceAwayTeam);
     }
 
     /**
-     *Increase the score for Away Team by 1 goal.
+     * Increase the goal for Home Team by 1 goal.
      */
-    public void addOneGoalForAwayTeam(View view){
-        goalAwayTeam = goalAwayTeam + 1 ;
-        displayGoalForAwayTeam(goalAwayTeam);
+    public void addOneGoalForHomeTeam(View view) {
+        mViewModel.goalHomeTeam = mViewModel.goalHomeTeam + 1;
+        displayGoalForHomeTeam(mViewModel.goalHomeTeam);
     }
 
     /**
-     *Increase the chance for Home Team by 1 foul.
+     * Increase the chance for Home Team by 1 foul.
      */
-    public void addOneChanceForAwayTeam(View view){
-        chanceAwayTeam= chanceAwayTeam + 1 ;
-        displayChanceForAwayTeam(chanceAwayTeam);
+    public void addOneChanceForHomeTeam(View view) {
+        mViewModel.chanceHomeTeam = mViewModel.chanceHomeTeam + 1;
+        displayChanceForHomeTeam(mViewModel.chanceHomeTeam);
+    }
+
+    /**
+     * Increase the score for Away Team by 1 goal.
+     */
+    public void addOneGoalForAwayTeam(View view) {
+        mViewModel.goalAwayTeam = mViewModel.goalAwayTeam + 1;
+        displayGoalForAwayTeam(mViewModel.goalAwayTeam);
+    }
+
+    /**
+     * Increase the chance for Home Team by 1 foul.
+     */
+    public void addOneChanceForAwayTeam(View view) {
+        mViewModel.chanceAwayTeam = mViewModel.chanceAwayTeam + 1;
+        displayChanceForAwayTeam(mViewModel.chanceAwayTeam);
     }
 
     /**
@@ -84,30 +90,30 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-    /**Reset the scores and chances for both teams to zero
+    /**
+     * Reset the scores and chances for both teams to zero
      *
      * @param view
      */
-    public void resetStats(View view){
-        goalHomeTeam = 0 ;
-        chanceHomeTeam = 0 ;
-        goalAwayTeam = 0 ;
-        chanceAwayTeam = 0 ;
-        displayGoalForHomeTeam(goalHomeTeam);
-        displayChanceForHomeTeam(chanceHomeTeam);
-        displayGoalForAwayTeam(goalAwayTeam);
-        displayChanceForAwayTeam(chanceAwayTeam);
+    public void resetStats(View view) {
+        mViewModel.goalHomeTeam = 0;
+        mViewModel.chanceHomeTeam = 0;
+        mViewModel.goalAwayTeam = 0;
+        mViewModel.chanceAwayTeam = 0;
+        displayGoalForHomeTeam(mViewModel.goalHomeTeam);
+        displayChanceForHomeTeam(mViewModel.chanceHomeTeam);
+        displayGoalForAwayTeam(mViewModel.goalAwayTeam);
+        displayChanceForAwayTeam(mViewModel.chanceAwayTeam);
     }
 
 
     // Use an intent to launch a youtube app.
-    public void watchYouTubeLive(View view){
+    public void watchYouTubeLive(View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("vnd.youtube:"));// only you app should handle this
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
 
 
     }
